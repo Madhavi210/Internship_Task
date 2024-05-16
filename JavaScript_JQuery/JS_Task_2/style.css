@@ -1,0 +1,36 @@
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+::placeholder {
+  color: rgb(219, 215, 215) !important;
+}
+
+label {
+  font-weight: 600;
+}
+/* h1 {
+  text-align: center;
+}
+.ring {
+  border: 20px solid rgb(211, 211, 211);
+  position: absolute;
+  left: 45%;
+  border-radius: 50%;
+  border-top: 20px solid red;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */

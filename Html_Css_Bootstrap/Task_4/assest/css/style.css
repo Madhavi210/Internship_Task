@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: rgb(223 223 223);
+}
+
+
+.dropdown-toggle::after{
+    content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")!important;
+    background-repeat: no-repeat;
+    width: 20px;
+    border: 0!important;
+    margin-left: 20px!important;
+    margin-top: 8px!important;
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo div {
+    height: 36px;
+    width: 36px;
+    background-color: #5D5FEF;
+    border-radius: 8px;
+    margin-left: 17px;
+    margin-bottom: 35px;
+}
+.sidebar-logo  div img {
+    width: 24.64px;
+    height: 24.63px;
+    margin: 7px;
+}
+.sidebar-logo  div span {
+    color: #000000;
+    font-size: 30px ; 
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: -13px;
+    font-family: Poppins;
+}
+#sidebar:not(.expand) div.sidebar-link span ,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #737791;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link img {
+    height: 26px;
+    width: 26px;
+    margin-right: .75rem;
+}
+
+
+a.sidebar-link:hover {
+    background-color: rgba(206, 154, 154, 0.075);
+    border-left: 3px solid #5D5FEF;
+}
+
+.sidebar-item {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+#sidebar:not(.expand) .sidecont {
+    display: none;
+}
+.sidecont {
+    width: 200px;
+    height: 259px;
+    border-radius: 20px;
+    background-color: #5D5FEF;
+    margin-left: 30px;
+    margin-bottom: 130px;
+    padding: 40px;
+}
+.sidecont div{
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    
+}
+.sidecont div img {
+    width:35.64px  ;    
+    height: 35.64px;
+    margin-left: 4px;
+}
+.sidecont h1{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 17px;
+    margin-top: 10px;
+}
+.sidecont p {
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.sidecont button {
+    color:#5D5FEF;
+    background-color:white ;
+    margin: 10px 18px;
+}
+.sidecont button:hover{
+    background-color: #c5c5ee;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+#sidebar:not(.expand)  .sbardashbord span {
+    display: none;
+}
+#sidebar:not(.expand)  .sbardashbord {
+    width: 0px;
+    height: 0px;
+    background-color: white;
+}
+#sidebar:not(.expand)  .sbardashbord img {
+    display: block;
+    height: 26px;
+    width: 26px;
+    margin-right: .75rem;
+    background-color: #8a8989;
+    border-radius: 20px;
+
+}
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+.sbardashbord{
+    padding: 9px;
+    width: 155px;
+    border-radius: 16px;
+    background-color: #5D5FEF;
+    justify-content: center;
+    align-items: center;
+}
+.sbardashbord span {
+    color: white;
+}
+.sidebar-item p{
+    margin-left: 24px;
+}
+
+.notify {
+    height: fit-content;
+    padding: 18px 1px;
+}
+#notfy{
+    display: none;
+}
+.profilepic {
+    padding: 4px 8px 4px 0px;
+    height: 60px;
+}
+.serchbar {
+    background-color: #F9FAFB;
+    border-radius: 10px;
+    padding: 0;
+    margin: 20px 7px 20px 7px;
+    /* width: 400px; */
+}
+.serchbar img {
+    margin: 15px;
+    width: 17px;
+}
+.navbar form div {
+    height: 60px;
+}
+.nav-user {
+    padding: 3px;
+}
+.nav-user span {
+    text-decoration: none;
+    font-size: 16px;
+}
+.username{
+    font-weight: 500;
+    color: black;
+}
+.admin {
+    font-weight: 400;
+    color: #9b9b9b;
+}
+
+
+/* sections  */
+.sec-container {
+    width: 1575px;
+    margin: 5px;
+}
+.sec1 {
+    padding: 5px;
+}
+.sec1upp div {
+    margin: 5px 20px;
+}
+.sec1upp div h1 {
+  
+    font-size: 24px;
+    font-weight: 600px;
+    color: black;
+   
+}
+.sec1upp div h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color:#737791;
+}
+.sec1low {
+    /* padding-top: 20px; */
+}
+.sec1low .sales {
+    background-color: #FFE2E5;
+    height: 184px;
+    Width : 180px;
+    margin-right: 20px;
+}
+.sec1low .sales img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px ;
+}
+.sec1low .sales h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+.sec1low .sales h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+.sec1low .sales p {
+    font-size: 12px;
+    font-weight: 500;
+    color:#4079ED ;
+}
+
+.sec1low .order {
+    height: 184px;
+    Width : 180px;
+    background-color: #FFF4DE;
+}
+.sec1low .order img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px ;
+}
+.sec1low .order h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+.sec1low .order h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+.sec1low .order p {
+    font-size: 12px;
+    font-weight: 500;
+    color:#4079ED ;
+}
+
+.sec1low .product {
+    height: 184px;
+    Width : 180px;
+    background-color:#DCFCE7;
+}
+.sec1low .product img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px ;
+}
+.sec1low .product h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+.sec1low .product h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+.sec1low .product p {
+    font-size: 12px;
+    font-weight: 500;
+    color:#4079ED ;
+}
+
+.sec1low .customer {
+    height: 184px;
+    Width : 180px;
+    background-color: #F3E8FF;
+}
+.sec1low .customer img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px ;
+}
+.sec1low .customer h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+.sec1low .customer h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+.sec1low .customer p {
+    font-size: 12px;
+    font-weight: 500;
+    color:#4079ED ;
+}
+
+.exportbtn {
+    height: 40px;
+    margin: 15px 20px;
+}
+ 
+
+/* section 2  */
+.accordion-button::after,.accordion-button:not(.collapsed)::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")!important;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #5D5FEF!important;
+    color: white!important;
+}
+.sec2 h1 {
+    font-weight: 600;
+    font-size: 24px;
+    padding: 10px 0px 10px 20px;
+}
+.row div {
+    border-radius: 20px
+}
+.accordion-item h2 button{
+    background-color: #5D5FEF;
+    color: white;
+    
+    margin-top: 5px;
+}
+
+/* section  3 */
+.sec3 h1 {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 0px 0px 20px;
+}
+.table thead tr {
+    color: #96A5B8;
+    font-size: 15px;
+    font-weight: 400;
+}
+.extra-row{
+    display: none;
+}
+
+/* section 4  */
+.sec4 h1{
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 0px 0px 20px;
+}
+
+/* section 5  */
+
+.sec5hed {
+    font-size: 24px;
+    font-family: 600;
+    padding: 15px 0px 0px 26px;
+}
+.cardright h1 {
+    margin: 20px 0 5px 17px;
+}
+
+.tab button {
+    padding: 10px;
+    border: none;
+}
+.tab-prod1 {
+    color: white;
+ background-color: #5D5FEF;
+}
+.card img {
+    width: 62px;
+    height: 62px;
+}
+.cardright h1 {
+    font-weight: 500;
+    font-size: 17px;
+    color: #000000;
+}
+.cardright p {
+    font-weight: 400;
+    font-size: 15px;
+    color: #828282;
+}
+#prod2 {
+    display: none;
+}
+
+/* section 6 */
+.sec6 h1{
+    font-size: 24px;
+    font-family: 600;
+    padding: 15px 0px 10px 20px;
+}
+.sec6 div{
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* section 7 */
+.upph1{
+    font-size: 24px;
+    font-family: 600;
+    padding: 15px 0px 0px 20px;
+}
+.sec7lines{
+    width: 12px;
+    background-color: #0095FF;
+}
+.sec7lines div {
+    width: 100%;
+    background-color: #00E096;
+}
+
+.sec7line1 {
+    height: 139px;  
+}
+.sec7line1 div{
+    height: 78.86px;   
+}
+
+.sec7line2 {
+    height: 168px;  
+}
+.sec7line2 div{
+    height: 89.14px;   
+}
+
+.sec7line3 {
+    height: 138.86px;  
+}
+.sec7line3 div{
+    height: 36px;   
+}
+
+.sec7line4 {
+    height:125.14px;  
+}
+.sec7line4 div{
+    height: 41.14px;   
+}
+
+.sec7line5 {
+    height: 96px;  
+}
+.sec7line5 div{
+    height: 36px;   
+}
+
+.sec7line6 {
+    height: 104.57px;  
+}
+.sec7line6 div{
+    height: 61.71px;   
+}
+.sec7low {
+    width: 210px;
+    padding-left: 7rem!important;
+}
+.sec7low div span {
+    font-weight: 400;
+    font-size: 16px;
+    color:#96A5B8;
+}
+.sec7low div h1 {
+    font-weight: 500;
+    font-size: 14px;
+    color:#000000;
+}
+.lowh1 {
+    padding: 0px 0px 0px 27px;
+}
+
+

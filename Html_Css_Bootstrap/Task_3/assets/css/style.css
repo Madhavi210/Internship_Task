@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.nav-link {
+    color: white !important;
+    font-size: 20px;
+}
+
+.navbar-toggler {
+    /* color: white !important; */
+    background-color: white !important;
+    border: white;
+}
+
+.navbar>.container-fluid{
+    margin-left: 3rem;
+
+
+}
+.sidebar {
+    background: #FFCCCC;
+    height: 725px;
+    border: 7px solid white;
+}
+
+.section1 {
+    background: #FFD4C7;
+    height: 355px;
+    border: 7px solid white;
+}
+
+.section2 {
+    background: #BAB9E2;
+    height: 370px;
+    border: 7px solid white;
+}
+
+.section3 {
+    background: #D7BDBD;
+    height: 354px;
+    border: 7px solid white;
+}
+
+.section4 {
+    background: #E1FFC3;
+    border: 7px solid white;
+    height: 354px;
+}
+
+.section5 {
+    background: #77DFF5;
+    border: 7px solid white;
+    height: 354px;
+}
+
+.section6 {
+    height: 354px;
+    background: #D7D4BD;
+    border: 7px solid white;
+}
